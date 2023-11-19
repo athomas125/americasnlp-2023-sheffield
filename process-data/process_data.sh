@@ -1,6 +1,10 @@
-$homedir = this directory
-$datadir = directory for storing data
-
+# Get the path to americasnlp-2023-sheffield 
+homedir=$(dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )")
+# Get the path to the data directory (located in the main repository)
+# THIS WILL ONLY WORK IF THIS FOLDER STAYS IN THIS LOCATION
+datadir="$(dirname "$(dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )")")/data"
+echo "HOME DIR: " $homedir
+echo "DATA DIR: " $datadir
 cd $datadir
 
 # Remove all files
@@ -12,6 +16,7 @@ rm -rf raw_data
 rm -rf REPUcs-AmericasNLP2021
 rm -rf nllb_md_data
 rm -rf nllb_seed_data
+exit
 mkdir data 
 
 # Get data
