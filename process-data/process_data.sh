@@ -16,7 +16,6 @@ rm -rf raw_data
 rm -rf REPUcs-AmericasNLP2021
 rm -rf nllb_md_data
 rm -rf nllb_seed_data
-exit
 mkdir data 
 
 # Get data
@@ -179,9 +178,11 @@ raw_data/helsinki_extra/train.es-quy.quy \
 raw_data/repucs_extra/train.es-quy.quy \
 > americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.quy
 
+
 python $homedir/process-data/remove_blank_lines.py \
 --path1 americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.es \
 --path2 americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.quy
+exit
 
 python $homedir/process-data/remove_blank_lines.py \
 --path1 americasnlp2023/data/quechua-spanish/dev.es \
