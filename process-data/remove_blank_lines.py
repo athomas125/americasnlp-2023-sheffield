@@ -7,8 +7,8 @@ def remove_blank_lines(path1, path2, output_dir):
         os.makedirs(output_dir)
 
     # Construct the output file paths
-    output_path1 = os.path.join(output_dir, os.path.basename(path1) + ".clean")
-    output_path2 = os.path.join(output_dir, os.path.basename(path2) + ".clean")
+    output_path1 = os.path.join(output_dir, os.path.basename(path1))
+    output_path2 = os.path.join(output_dir, os.path.basename(path2))
 
     with open(path1, 'r', encoding='utf-8') as file1, open(path2, 'r', encoding='utf-8') as file2, \
          open(output_path1, 'w', encoding='utf-8') as out1, open(output_path2, 'w', encoding='utf-8') as out2:
