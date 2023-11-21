@@ -268,47 +268,47 @@ python $homedir/process-data/remove_blank_lines.py \
 --path1 americasnlp2023/data/bribri-spanish/dev.bzd \
 --path2 americasnlp2023/data/bribri-spanish/dev.es
 
-# Process Spanish-Hñähñu data
+# Process Spanish-Hñähñu data (skipping because no access to detokenizer)
 
-cat raw_data/helsinki_extra/train.es-oto.es >> americasnlp2023/data/hñähñu-spanish/train.es
-cat raw_data/helsinki_extra/train.es-oto.oto >> americasnlp2023/data/hñähñu-spanish/train.oto
+# cat raw_data/helsinki_extra/train.es-oto.es >> americasnlp2023/data/hñähñu-spanish/train.es
+# cat raw_data/helsinki_extra/train.es-oto.oto >> americasnlp2023/data/hñähñu-spanish/train.oto
 
-perl $homedir/process-data/detokenizer.perl \
-< americasnlp2023/data/hñähñu-spanish/train.oto\
-> americasnlp2023/data/hñähñu-spanish/train_detok.oto
+# perl $homedir/process-data/detokenizer.perl \
+# < americasnlp2023/data/hñähñu-spanish/train.oto\
+# > americasnlp2023/data/hñähñu-spanish/train_detok.oto
 
-perl $homedir/process-data/detokenizer.perl \
-< americasnlp2023/data/hñähñu-spanish/train.es\
-> americasnlp2023/data/hñähñu-spanish/train_detok.es
+# perl $homedir/process-data/detokenizer.perl \
+# < americasnlp2023/data/hñähñu-spanish/train.es\
+# > americasnlp2023/data/hñähñu-spanish/train_detok.es
 
-python $homedir/process-data/remove_blank_lines.py \
---path1 americasnlp2023/data/hñähñu-spanish/train_detok.oto \
---path2 americasnlp2023/data/hñähñu-spanish/train_detok.es
+# python $homedir/process-data/remove_blank_lines.py \
+# --path1 americasnlp2023/data/hñähñu-spanish/train_detok.oto \
+# --path2 americasnlp2023/data/hñähñu-spanish/train_detok.es
 
-python $homedir/process-data/remove_blank_lines.py \
---path1 americasnlp2023/data/hñähñu-spanish/dev.oto \
---path2 americasnlp2023/data/hñähñu-spanish/dev.es
+# python $homedir/process-data/remove_blank_lines.py \
+# --path1 americasnlp2023/data/hñähñu-spanish/dev.oto \
+# --path2 americasnlp2023/data/hñähñu-spanish/dev.es
 
-# Process Spanish-Nahuatl data
+# Process Spanish-Nahuatl data (skipping because no access to detokenizer)
 
-cat raw_data/helsinki_extra/train.es-nah.es >> americasnlp2023/data/nahuatl-spanish/train.es
-cat raw_data/helsinki_extra/train.es-nah.nah >> americasnlp2023/data/nahuatl-spanish/train.nah
+# cat raw_data/helsinki_extra/train.es-nah.es >> americasnlp2023/data/nahuatl-spanish/train.es
+# cat raw_data/helsinki_extra/train.es-nah.nah >> americasnlp2023/data/nahuatl-spanish/train.nah
 
-perl $homedir/process-data/detokenizer.perl \
-< americasnlp2023/data/nahuatl-spanish/train.nah \
-> americasnlp2023/data/nahuatl-spanish/train_detok.nah
+# perl $homedir/process-data/detokenizer.perl \
+# < americasnlp2023/data/nahuatl-spanish/train.nah \
+# > americasnlp2023/data/nahuatl-spanish/train_detok.nah
 
-perl $homedir/process-data/detokenizer.perl \
-< americasnlp2023/data/nahuatl-spanish/train.es \
-> americasnlp2023/data/nahuatl-spanish/train_detok.es
+# perl $homedir/process-data/detokenizer.perl \
+# < americasnlp2023/data/nahuatl-spanish/train.es \
+# > americasnlp2023/data/nahuatl-spanish/train_detok.es
 
-python $homedir/process-data/remove_blank_lines.py \
---path1 americasnlp2023/data/nahuatl-spanish/train_detok.nah \
---path2 americasnlp2023/data/nahuatl-spanish/train_detok.es
+# python $homedir/process-data/remove_blank_lines.py \
+# --path1 americasnlp2023/data/nahuatl-spanish/train_detok.nah \
+# --path2 americasnlp2023/data/nahuatl-spanish/train_detok.es
 
-python $homedir/process-data/remove_blank_lines.py \
---path1 americasnlp2023/data/nahuatl-spanish/dev.nah \
---path2 americasnlp2023/data/nahuatl-spanish/dev.es
+# python $homedir/process-data/remove_blank_lines.py \
+# --path1 americasnlp2023/data/nahuatl-spanish/dev.nah \
+# --path2 americasnlp2023/data/nahuatl-spanish/dev.es
 
 # Process Spanish-Raramuri data
 
@@ -398,14 +398,14 @@ declare -a files=("americasnlp2023/data/quechua-spanish/parallel_data/train.es-q
 "americasnlp2023/data/bribri-spanish/train.bzd_filtered"
 "americasnlp2023/data/bribri-spanish/dev.es_filtered"
 "americasnlp2023/data/bribri-spanish/dev.bzd_filtered"
-"americasnlp2023/data/hñähñu-spanish/train_detok.es_filtered"
-"americasnlp2023/data/hñähñu-spanish/train_detok.oto_filtered"
-"americasnlp2023/data/hñähñu-spanish/dev.es_filtered"
-"americasnlp2023/data/hñähñu-spanish/dev.oto_filtered"
-"americasnlp2023/data/nahuatl-spanish/train_detok.es_filtered"
-"americasnlp2023/data/nahuatl-spanish/train_detok.nah_filtered"
-"americasnlp2023/data/nahuatl-spanish/dev.es_filtered"
-"americasnlp2023/data/nahuatl-spanish/dev.nah_filtered"
+# "americasnlp2023/data/hñähñu-spanish/train_detok.es_filtered"
+# "americasnlp2023/data/hñähñu-spanish/train_detok.oto_filtered"
+# "americasnlp2023/data/hñähñu-spanish/dev.es_filtered"
+# "americasnlp2023/data/hñähñu-spanish/dev.oto_filtered"
+# "americasnlp2023/data/nahuatl-spanish/train_detok.es_filtered"
+# "americasnlp2023/data/nahuatl-spanish/train_detok.nah_filtered"
+# "americasnlp2023/data/nahuatl-spanish/dev.es_filtered"
+# "americasnlp2023/data/nahuatl-spanish/dev.nah_filtered"
 "americasnlp2023/data/raramuri-spanish/train_nontok.es_filtered"
 "americasnlp2023/data/raramuri-spanish/train_nontok.tar_filtered"
 "americasnlp2023/data/raramuri-spanish/dev.es_filtered"
