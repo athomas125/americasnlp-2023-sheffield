@@ -182,7 +182,6 @@ raw_data/repucs_extra/train.es-quy.quy \
 python $homedir/process-data/remove_blank_lines.py \
 --path1 americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.es \
 --path2 americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.quy
-exit
 
 python $homedir/process-data/remove_blank_lines.py \
 --path1 americasnlp2023/data/quechua-spanish/dev.es \
@@ -570,35 +569,35 @@ cat americasnlp2023/data/${t}-spanish/czn-eng/${split}.en_filtered | python $hom
 > data/${split}.eng_Latn-${ttag}_Latn.eng_Latn
 done
 
-t=hñähñu
-ttag=oto
-for split in train_detok dev
-do
-cat americasnlp2023/data/${t}-spanish/${split}.${ttag}_filtered | python $homedir/fairseq/scripts/spm_encode.py \
---model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
-> data/${split}.spa_Latn-${ttag}_Latn.${ttag}_Latn
+# t=hñähñu
+# ttag=oto
+# for split in train_detok dev
+# do
+# cat americasnlp2023/data/${t}-spanish/${split}.${ttag}_filtered | python $homedir/fairseq/scripts/spm_encode.py \
+# --model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
+# > data/${split}.spa_Latn-${ttag}_Latn.${ttag}_Latn
 
-cat americasnlp2023/data/${t}-spanish/${split}.es_filtered | python $homedir/fairseq/scripts/spm_encode.py \
---model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
-> data/${split}.spa_Latn-${ttag}_Latn.spa_Latn
-done
-mv data/train_detok.spa_Latn-oto_Latn.spa_Latn data/train.spa_Latn-oto_Latn.spa_Latn
-mv data/train_detok.spa_Latn-oto_Latn.oto_Latn data/train.spa_Latn-oto_Latn.oto_Latn
+# cat americasnlp2023/data/${t}-spanish/${split}.es_filtered | python $homedir/fairseq/scripts/spm_encode.py \
+# --model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
+# > data/${split}.spa_Latn-${ttag}_Latn.spa_Latn
+# done
+# mv data/train_detok.spa_Latn-oto_Latn.spa_Latn data/train.spa_Latn-oto_Latn.spa_Latn
+# mv data/train_detok.spa_Latn-oto_Latn.oto_Latn data/train.spa_Latn-oto_Latn.oto_Latn
 
-t=nahuatl
-ttag=nah
-for split in train_detok dev
-do
-cat americasnlp2023/data/${t}-spanish/${split}.${ttag}_filtered | python $homedir/fairseq/scripts/spm_encode.py \
---model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
-> data/${split}.spa_Latn-${ttag}_Latn.${ttag}_Latn
+# t=nahuatl
+# ttag=nah
+# for split in train_detok dev
+# do
+# cat americasnlp2023/data/${t}-spanish/${split}.${ttag}_filtered | python $homedir/fairseq/scripts/spm_encode.py \
+# --model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
+# > data/${split}.spa_Latn-${ttag}_Latn.${ttag}_Latn
 
-cat americasnlp2023/data/${t}-spanish/${split}.es_filtered | python $homedir/fairseq/scripts/spm_encode.py \
---model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
-> data/${split}.spa_Latn-${ttag}_Latn.spa_Latn
-done
-mv data/train_detok.spa_Latn-nah_Latn.spa_Latn data/train.spa_Latn-nah_Latn.spa_Latn
-mv data/train_detok.spa_Latn-nah_Latn.nah_Latn data/train.spa_Latn-nah_Latn.nah_Latn
+# cat americasnlp2023/data/${t}-spanish/${split}.es_filtered | python $homedir/fairseq/scripts/spm_encode.py \
+# --model $homedir/NLLB-inference/preprocess/flores200_sacrebleu_tokenizer_spm.model \
+# > data/${split}.spa_Latn-${ttag}_Latn.spa_Latn
+# done
+# mv data/train_detok.spa_Latn-nah_Latn.spa_Latn data/train.spa_Latn-nah_Latn.spa_Latn
+# mv data/train_detok.spa_Latn-nah_Latn.nah_Latn data/train.spa_Latn-nah_Latn.nah_Latn
 
 t=raramuri
 ttag=tar
@@ -690,7 +689,7 @@ fairseq-preprocess --source-lang eng_Latn --target-lang grn_Latn \
     --destdir data-bin/eng_Latn-grn_Latn/ \
     --workers 10
 
-for tgt in hch shp tar nah oto czn bzd cni
+for tgt in hch shp tar czn bzd cni # nah oto
 do
 fairseq-preprocess --source-lang spa_Latn --target-lang ${tgt}_Latn \
     --trainpref data/train.spa_Latn-${tgt}_Latn \
