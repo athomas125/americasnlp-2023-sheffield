@@ -647,7 +647,7 @@ fairseq-preprocess --source-lang spa_Latn --target-lang quy_Latn \
     --trainpref data/train.spa_Latn-quy_Latn \
     --validpref data/dev.spa_Latn-quy_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/spa_Latn-quy_Latn/ \
     --workers 10
 
@@ -655,7 +655,7 @@ fairseq-preprocess --source-lang eng_Latn --target-lang quy_Latn \
     --trainpref data/train.eng_Latn-quy_Latn \
     --joined-dictionary	\
     --bpe sentencepiece \
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/eng_Latn-quy_Latn/ \
     --workers 10
 
@@ -663,14 +663,14 @@ fairseq-preprocess --source-lang spa_Latn --target-lang ayr_Latn \
     --trainpref data/train.spa_Latn-ayr_Latn \
     --validpref data/dev.spa_Latn-ayr_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/spa_Latn-ayr_Latn/ \
     --workers 10
 
 fairseq-preprocess --source-lang eng_Latn --target-lang ayr_Latn \
     --trainpref data/train.eng_Latn-ayr_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/eng_Latn-ayr_Latn/ \
     --workers 10
 
@@ -678,14 +678,14 @@ fairseq-preprocess --source-lang spa_Latn --target-lang grn_Latn \
     --trainpref data/train.spa_Latn-grn_Latn \
     --validpref data/dev.spa_Latn-grn_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/spa_Latn-grn_Latn/ \
     --workers 10
 
 fairseq-preprocess --source-lang eng_Latn --target-lang grn_Latn \
     --trainpref data/train.eng_Latn-grn_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/eng_Latn-grn_Latn/ \
     --workers 10
 
@@ -695,7 +695,7 @@ fairseq-preprocess --source-lang spa_Latn --target-lang ${tgt}_Latn \
     --trainpref data/train.spa_Latn-${tgt}_Latn \
     --validpref data/dev.spa_Latn-${tgt}_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/spa_Latn-${tgt}_Latn/ \
     --workers 10
 done
@@ -704,7 +704,7 @@ tgt=czn
 fairseq-preprocess --source-lang eng_Latn --target-lang ${tgt}_Latn \
     --trainpref data/train.eng_Latn-${tgt}_Latn \
     --joined-dictionary	\
-    --srcdict $homedir/nllb-600M/dictionary.txt \
+    --srcdict $homedir/NLLB-inference/dictionary.txt \
     --destdir data-bin/eng_Latn-${tgt}_Latn/ \
     --workers 10
 
