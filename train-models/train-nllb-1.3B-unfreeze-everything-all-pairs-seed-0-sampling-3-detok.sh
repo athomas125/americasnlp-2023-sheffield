@@ -1,5 +1,6 @@
 
 ckp=nllb-1.3B/checkpoint.pt
+datadir="$(dirname "$(dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )")")/data/data-bin/combined"
 root=evaluation_v3/NLLB-inference
 
 export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:512
