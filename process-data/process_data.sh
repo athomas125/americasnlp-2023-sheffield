@@ -443,6 +443,9 @@ do
     sed -i "s/\‚/\,/g" $f
 done
 
+python $homedir/process-data/copy_filtered_data.py
+cp nllb_seed_data/NLLB-Seed/eng_Latn-grn_Latn/eng_Latn $datadir/filtered_data
+cp nllb_seed_data/NLLB-Seed/eng_Latn-grn_Latn/grn_Latn $datadir/filtered_data
 # Sentencepiece
 
 cat americasnlp2023/data/quechua-spanish/parallel_data/train.es-quy.quy_filtered | python $homedir/fairseq/scripts/spm_encode.py \
